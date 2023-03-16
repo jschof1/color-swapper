@@ -1,4 +1,126 @@
-h1, h2 {
-  font-family: Lato;
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #ffffff;
+  --background-color: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: var(--primary-color);
+  width: 100%;
+  padding: 1rem;
+}
+
+header h1 {
+  color: var(--text-color);
+  font-size: 2rem;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.input-section,
+.color-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+.color-section {
+  grid-column: span 2;
+}
+
+input[type="file"] {
+  cursor: pointer;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  background-color: #1e6a9c;
+}
+
+#imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+canvas {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.custom-file-input {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.custom-file-input:hover {
+  background-color: #2980b9;
+}
+
+.custom-file-input:active {
+  background-color: #1e6a9c;
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
 

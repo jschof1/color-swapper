@@ -1,10 +1,17 @@
-  <input type="file" id="inputImage" accept="image/*">
-  <br>
-  Source Color: <input type="color" id="sourceColor" value="#0474E5">
-  Target Color: <input type="color" id="targetColor" value="#FFFFFF">
-  <br>
-  <button id="processImage">Replace Color</button>
-  <br>
-  <canvas id="imageCanvas" style="border: 1px solid;"></canvas>
-  <br>
-  <button id="downloadImage">Download Image</button>
+<section class="input-section">
+  <label for="inputImages" class="custom-file-input">Choose images:
+    <input type="file" id="inputImages" accept="image/*" multiple>
+  </label>
+</section>
+<section class="color-section">
+  <label for="sourceColor">Source color:</label>
+  <input type="color" id="sourceColor" value="#0474E5">
+  <label for="targetColor">Target color:</label>
+  <input type="color" id="targetColor" value="#FFFFFF">
+</section>
+<section class="button-section">
+  <button id="processImages">Replace Color</button>
+  <button id="downloadImages">Download Images</button>
+</section>
+<section id="imageContainer"></section>
+</main>
