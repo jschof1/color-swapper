@@ -80,7 +80,3 @@ This project is currently maintained by Jack Schofield. Contributions, suggestio
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
-
----
-
-Note: You may want to add more details or specific sections according to the project's needs and your documentation standards.
