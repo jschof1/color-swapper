@@ -1,17 +1,35 @@
-<section class="input-section">
-  <label for="inputImages" class="custom-file-input">Choose images:
-    <input type="file" id="inputImages" accept="image/*" multiple>
-  </label>
-</section>
-<section class="color-section">
-  <label for="sourceColor">Source color:</label>
-  <input type="color" id="sourceColor" value="#0474E5">
-  <label for="targetColor">Target color:</label>
-  <input type="color" id="targetColor" value="#FFFFFF">
-</section>
-<section class="button-section">
-  <button id="processImages">Replace Color</button>
-  <button id="downloadImages">Download Images</button>
-</section>
-<section id="imageContainer"></section>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Color swapping app">
+  <meta name="keywords" content="color, swap, app">
+  <meta name="author" content="Your Name">
+  <meta name="theme-color" content="#0474E5">
+  <title>Color Swapping App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="input-section">
+    <label for="inputImages" class="custom-file-input">Choose images:
+      <input type="file" id="inputImages" accept="image/*" multiple>
+    </label>
+  </section>
+  <section class="color-section">
+    <label for="sourceColor">Source color:</label>
+    <input type="color" id="sourceColor" value="#0474E5">
+    <label for="targetColor">Target color:</label>
+    <input type="color" id="targetColor" value="#FFFFFF">
+  </section>
+  <section class="button-section">
+    <button id="processImages">Replace Color</button>
+    <button id="downloadImages">Download Images</button>
+  </section>
+  <section id="imageContainer"></section>
+    <script src="index.js"></script>
+</body>
+
+</html>

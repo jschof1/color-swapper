@@ -1,4 +1,3 @@
-import './style.css';
 const inputImages = document.getElementById('inputImages');
 const sourceColor = document.getElementById('sourceColor');
 const targetColor = document.getElementById('targetColor');

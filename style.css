@@ -92,6 +92,8 @@ button:active {
 canvas {
   border: 1px solid var(--primary-color);
   border-radius: 5px;
+  max-width: 20rem;
+  max-height: 20rem;
 }
 
 .custom-file-input {
