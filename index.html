@@ -8,28 +8,112 @@
   <meta name="keywords" content="color, swap, app">
   <meta name="author" content="Your Name">
   <meta name="theme-color" content="#0474E5">
-  <title>Color Swapping App</title>
   <link rel="stylesheet" href="style.css">
+  <title>Color Swapping App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <section class="input-section">
-    <label for="inputImages" class="custom-file-input">Choose images:
-      <input type="file" id="inputImages" accept="image/*" multiple>
-    </label>
-  </section>
-  <section class="color-section">
-    <label for="sourceColor">Source color:</label>
-    <input type="color" id="sourceColor" value="#0474E5">
-    <label for="targetColor">Target color:</label>
-    <input type="color" id="targetColor" value="#FFFFFF">
-  </section>
-  <section class="button-section">
-    <button id="processImages">Replace Color</button>
-    <button id="downloadImages">Download Images</button>
-  </section>
-  <section id="imageContainer"></section>
-    <script src="index.js"></script>
+<body
+  class="bg-gray-100 min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-500 to-red-500">
+  
+  <!-- Main container that holds the entire content -->
+  <div class="w-full max-w-7xl p-24 bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-2xl flex flex-col lg:flex-row space-y-6">
+    
+    <!-- Right Section: Controls -->
+    <div class="w-full lg:w-1/2 flex p-10 flex-col space-y-6 lg:order-2">
+      
+      <!-- Heading section -->
+      <div class="text-center">
+        <h1
+          class="text-4xl sm:text-5xl font-bold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 mb-6">
+          Color Swapper
+        </h1>
+        <button id="openModal" class="bg-blue-600 text-white py-2 px-4 rounded-full shadow-md hover:bg-blue-700 transition">
+          How it Works
+        </button>
+      </div>
+
+      <!-- Input Section -->
+      <section class="input-section w-full">
+        <label for="inputImages" class="block text-lg font-medium text-gray-700 mb-2">Choose images:</label>
+        <input type="file" id="inputImages" accept="image/*" multiple
+          class="block w-full text-sm text-gray-500 border border-gray-300 rounded-lg cursor-pointer bg-white p-3 shadow-sm hover:shadow-md transition">
+      </section>
+
+      <!-- Color Section -->
+      <section class="color-section w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Source Color -->
+        <div>
+          <label for="sourceColor" class="block text-lg font-medium text-gray-700">Source Color:</label>
+          <input type="color" id="sourceColor" value="#0474E5"
+            class="w-full h-12 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition">
+        </div>
+
+        <!-- Target Color -->
+        <div>
+          <label for="targetColor" class="block text-lg font-medium text-gray-700">Target Color:</label>
+          <input type="color" id="targetColor" value="#FFFFFF"
+            class="w-full h-12 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition">
+        </div>
+      </section>
+
+      <!-- Button Section -->
+      <section class="button-section w-full flex flex-col justify-between  sm:flex-row sm:space-y-0 sm:space-x-4">
+        <button id="processImages"
+          class="w-full sm:w-auto bg-purple-600 text-white py-3 px-6 rounded-full shadow-md hover:bg-purple-700 transition">
+          Replace Color
+        </button>
+        <button id="downloadImages"
+          class="w-full sm:w-auto bg-green-600 text-white py-3 px-6 rounded-full shadow-md hover:bg-green-700 transition">
+          Download Image
+        </button>
+      </section>
+    </div>
+
+    <!-- Left Section: Image Preview -->
+    <div class="w-full lg:w-1/2 bg-gray-50 p-6 rounded-2xl shadow-lg order-2 lg:order-1">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Image Preview</h2>
+      <section id="imageContainer" class="w-full h-72 sm:h-96 bg-gray-200 rounded-lg p-4 flex items-center justify-center">
+        <!-- Image Preview Will Go Here -->
+      </section>
+    </div>
+
+  </div>
+
+  <!-- Modal (Initially Hidden) -->
+  <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-2xl p-8 max-w-lg w-full shadow-2xl">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">How It Works</h2>
+      <ol class="list-decimal pl-6 space-y-3 text-gray-700">
+        <li>Upload an image using the "Choose images" button.</li>
+        <li>Click on the "Source Color" picker and select a color from the image you want to replace.</li>
+        <li>Click on the "Target Color" picker and choose the color you want to replace it with.</li>
+        <li>Click "Replace Color" to preview the changes in the image.</li>
+        <li>Once satisfied, click "Download Image" to save the modified image.</li>
+      </ol>
+      <button id="closeModal"
+        class="mt-6 bg-blue-600 text-white py-3 px-6 rounded-full shadow-md hover:bg-blue-700 transition">
+        Got it!
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to toggle the modal
+    const openModalButton = document.getElementById('openModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const modal = document.getElementById('modal');
+
+    openModalButton.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    closeModalButton.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+  </script>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
